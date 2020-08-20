@@ -1,7 +1,7 @@
 
 What does it do?
 
-A simple Addon for blender to map the standard G, R, S hotkeys to the view tools, so you don't have to use the snapping hotkeys X, Y, Z. 
+A simple addon for blender to map the standard G, R, S hotkeys to the view tools, so you don't have to use the snapping hotkeys X, Y, Z. 
 
 Instructions:
 1. Download the .zip file using the green button "Code" and then the drop menu button "download zip"
