@@ -1,3 +1,5 @@
+**Lazy Viewport 1.0?**
+
 
 **What does it do?**
 
@@ -17,5 +19,8 @@ The standard "G" then "G" does not work with the standard Blender view tools, th
 **Rotation Snap:**
 Use ctrl+left click to snap incrementally. 
 The standard stapping with the 90 degree hotkeys oes not work with the standard Blender view tools, thus not working with the Lazy Viewport Add On. 
+
+**Adjust Proportional Editing:**
+This one is a little tricky! While move the object, using middle mouse to scroll and adjust the size of the propportional editing ring. You must left click and drag to edit and while your editing, then using middle mouse, using the left click and middle mouse at the same time. 
 
 Yay for lazyness!  
