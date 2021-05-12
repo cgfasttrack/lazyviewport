@@ -23,4 +23,8 @@ The standard stapping with the 90 degree hotkeys oes not work with the standard 
 **Adjust Proportional Editing:**
 This one is a little tricky! While move the object, using middle mouse to scroll and adjust the size of the propportional editing ring. You must left click and drag to edit and while your editing, then using middle mouse, using the left click and middle mouse at the same time. 
 
+**Snapping with rotation and scale:**
+Scale: While dragging on an axis, you can utalize the zero key to snap. 
+Rotation: Use Ctrl + Left Click and drag on an axis to snap incrementally. 
+
 Yay for lazyness!  
