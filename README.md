@@ -28,7 +28,7 @@ This one is a little tricky! While move the object, using middle mouse to scroll
 
 **Scale Snapping:**
 
-Scale: While dragging on an axis, you can utalize the zero key to snap. 
+While dragging on an axis, you can utalize the zero key to snap. 
 Rotation: Use Ctrl + Left Click and drag on an axis to snap incrementally. 
 
 Yay for lazyness!  
