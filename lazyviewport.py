@@ -1,7 +1,18 @@
+"""Lazy Viewport 1.1
+
+1.1 Updates:
+Now supporting the modes: 
+- Pose Edit Mode
+- Armature Edit Mode
+- Lattice Edit Mode
+- UV Edit Mode
+- Metaball Mode
+- Pose Mode
+"""
 import bpy
 
 bl_info = {
-    "name": "Lazy Viewport",
+    "name": "Lazy Viewport 1.1",
     "blender": (2, 80, 0),
     "category": "Object",
 }
@@ -16,7 +27,6 @@ class LazyViewPortMove(bpy.types.Operator):
     def execute(self, context):
         set_active_tool('builtin.move')
         return {'FINISHED'}
-
 
 class LazyViewPortRotate(bpy.types.Operator):
     bl_idname = "object.lazy_viewport_rotate"
@@ -49,12 +59,15 @@ class LazyViewPortSelect(bpy.types.Operator):
 
 
 def set_active_tool(tool_name):
+
     for area in bpy.context.screen.areas:
-        if area.type == "VIEW_3D":
-            override = bpy.context.copy()
-            override["space_data"] = area.spaces[0]
-            override["area"] = area
-            bpy.ops.wm.tool_set_by_id(override, name=tool_name)
+        types = ['VIEW_3D', 'IMAGE_EDITOR']
+        for t in types:
+            if area.type == t:
+                override = bpy.context.copy()
+                override["space_data"] = area.spaces[0]
+                override["area"] = area
+                bpy.ops.wm.tool_set_by_id(override, name=tool_name)
 
 def register():
     bpy.utils.register_class(LazyViewPortMove)
@@ -63,7 +76,7 @@ def register():
     bpy.utils.register_class(LazyViewPortSelect)
 
     # handle the keymap
-    types = ['Object Mode', 'Mesh', 'Curve']
+    types = ['Object Mode', 'Mesh', 'Curve', 'Lattice', 'Armature', "Metaball", "UV Editor", "Pose"]
     for t in types:
         wm = bpy.context.window_manager
         km = wm.keyconfigs.addon.keymaps.new(name=t, space_type='EMPTY')
