@@ -1,4 +1,4 @@
-**Lazy Viewport 1.0**
+**Lazy Viewport 1.1**
 
 
 **What does it do?**
