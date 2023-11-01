@@ -1,15 +1,17 @@
-**Lazy Viewport 1.1**
+**Lazy Viewport 1.2**
 
+Blender 4.0 updated!
 
 **What does it do?**
 
 A simple addon for blender to map the standard G, R, S hotkeys to the view tools, so you don't have to use the snapping hotkeys X, Y, Z. 
 
 **Instructions:**
-1. Download the .zip file using the green button "Code" and then the drop menu button "download zip"
-2. Extract the zip.
-3. In blender, go to Preferecens>Addons>Install and navigate to your extracted lazyviewport.py 
-4. When installing, select the python file, not the folder. 
+1. Remove any older version of lazy viewport that you may have installed. 
+2. Download the .zip file using the green button "Code" and then the drop menu button "download zip"
+3. Extract the zip.
+4. In blender, go to Preferecens>Addons>Install and navigate to your extracted lazyviewport.py 
+5. When installing, select the python file, not the folder. 
 
 Once installed, use G, R, S with the user friendly viewport gizmo tools :) 
 
