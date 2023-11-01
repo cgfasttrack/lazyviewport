@@ -1,4 +1,7 @@
-"""Lazy Viewport 1.1
+"""Lazy Viewport 1.2
+
+1.2 Updates:
+- Compatibility with Blender 4.0
 
 1.1 Updates:
 Now supporting the modes: 
@@ -12,7 +15,7 @@ Now supporting the modes:
 import bpy
 
 bl_info = {
-    "name": "Lazy Viewport 1.1",
+    "name": "Lazy Viewport 1.2",
     "blender": (2, 80, 0),
     "category": "Object",
 }
@@ -64,10 +67,22 @@ def set_active_tool(tool_name):
         types = ['VIEW_3D', 'IMAGE_EDITOR']
         for t in types:
             if area.type == t:
+                # old
+                # override = bpy.context.copy()
+                # override["space_data"] = area.spaces[0]
+                # override["area"] = area
+                # bpy.ops.wm.tool_set_by_id(override, name=tool_name)
+
+                # 4.0 update
                 override = bpy.context.copy()
                 override["space_data"] = area.spaces[0]
                 override["area"] = area
-                bpy.ops.wm.tool_set_by_id(override, name=tool_name)
+                override["region"] = area.regions[0]
+                
+                with bpy.context.temp_override(**override):
+                    bpy.ops.wm.tool_set_by_id(name=tool_name)
+
+
 
 def register():
     bpy.utils.register_class(LazyViewPortMove)
