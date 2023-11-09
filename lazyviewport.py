@@ -1,4 +1,7 @@
-"""Lazy Viewport 1.2
+"""Lazy Viewport 1.3
+
+1.3 Updates
+- Fixed error on previous versions of blender
 
 1.2 Updates:
 - Compatibility with Blender 4.0
@@ -15,7 +18,7 @@ Now supporting the modes:
 import bpy
 
 bl_info = {
-    "name": "Lazy Viewport 1.2",
+    "name": "Lazy Viewport 1.3",
     "blender": (2, 80, 0),
     "category": "Object",
 }
@@ -67,21 +70,26 @@ def set_active_tool(tool_name):
         types = ['VIEW_3D', 'IMAGE_EDITOR']
         for t in types:
             if area.type == t:
-                # old
-                # override = bpy.context.copy()
-                # override["space_data"] = area.spaces[0]
-                # override["area"] = area
-                # bpy.ops.wm.tool_set_by_id(override, name=tool_name)
+                try:
+                    # before 4.0
+                    override = bpy.context.copy()
+                    override["space_data"] = area.spaces[0]
+                    override["area"] = area
+                    bpy.ops.wm.tool_set_by_id(override, name=tool_name)
+                except:
+                    pass
 
-                # 4.0 update
-                override = bpy.context.copy()
-                override["space_data"] = area.spaces[0]
-                override["area"] = area
-                override["region"] = area.regions[0]
-                
-                with bpy.context.temp_override(**override):
-                    bpy.ops.wm.tool_set_by_id(name=tool_name)
-
+                try:
+                    # 4.0 update
+                    override = bpy.context.copy()
+                    override["space_data"] = area.spaces[0]
+                    override["area"] = area
+                    override["region"] = area.regions[0]
+                    
+                    with bpy.context.temp_override(**override):
+                        bpy.ops.wm.tool_set_by_id(name=tool_name)
+                except:
+                    pass
 
 
 def register():
