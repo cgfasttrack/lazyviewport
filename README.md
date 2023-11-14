@@ -1,4 +1,4 @@
-**Lazy Viewport 1.2**
+**Lazy Viewport 1.3**
 
 Blender 4.0 updated!
 
