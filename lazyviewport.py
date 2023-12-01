@@ -32,7 +32,7 @@ class LazyViewPortMove(bpy.types.Operator):
 
     def execute(self, context):
         set_active_tool('builtin.move')
-        return {'FINISHED'}
+        return {'PASS_THROUGH'}
 
 class LazyViewPortRotate(bpy.types.Operator):
     bl_idname = "object.lazy_viewport_rotate"
@@ -41,7 +41,7 @@ class LazyViewPortRotate(bpy.types.Operator):
 
     def execute(self, context):
         set_active_tool('builtin.rotate')
-        return {'FINISHED'}
+        return {'PASS_THROUGH'}
 
 
 class LazyViewPortScale(bpy.types.Operator):
@@ -51,7 +51,7 @@ class LazyViewPortScale(bpy.types.Operator):
 
     def execute(self, context):
         set_active_tool('builtin.scale')
-        return {'FINISHED'}
+        return {'PASS_THROUGH'}
 
 
 class LazyViewPortSelect(bpy.types.Operator):
@@ -61,7 +61,7 @@ class LazyViewPortSelect(bpy.types.Operator):
 
     def execute(self, context):
         set_active_tool('builtin.select_box')
-        return {'FINISHED'}
+        return {'PASS_THROUGH'}
 
 
 def set_active_tool(tool_name):
